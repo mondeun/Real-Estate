@@ -13,7 +13,7 @@ namespace Real_Estate.Models
     {
         public Office()
         {
-            this.Cities = new HashSet<City>();
+            
         }
         public int OfficeID { get; set; }
 
@@ -31,6 +31,6 @@ namespace Real_Estate.Models
 
         public string Address { get; set; }
 
-        public ICollection<City> Cities { get; set; }
+       
     }
 }
