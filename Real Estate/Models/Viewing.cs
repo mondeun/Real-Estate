@@ -24,7 +24,7 @@ namespace Real_Estate.Models
 
         public int AgentRefID { get; set; }
 
-        [ForeignKey]
+        [ForeignKey("AgentRefID")]
         public Agent Agent { get; set; }
 
         // Other attributes 

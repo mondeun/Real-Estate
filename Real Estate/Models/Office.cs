@@ -23,7 +23,7 @@ namespace Real_Estate.Models
         public int ZipCodeRefID { get; set; }
 
         [ForeignKey("ZipCodeRefID")]
-        public Zipcode Zipcode { get; set; }
+        public ZipCode ZipCode { get; set; }
 
         public string Address { get; set; }
     }
