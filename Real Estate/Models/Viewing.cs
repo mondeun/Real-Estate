@@ -18,7 +18,7 @@ namespace Real_Estate.Models
         public RealEstateObject RealEstateObject { get; set; }  //RealEstateObject is empty - Andres does
 
         //Foreign key - Many to many
-        public int PersonId { get; set; }    
+        public int PersonID { get; set; }    
         [ForeignKey("PersonID")]
         public ICollection<Customer> Customers { get; set; }
 
