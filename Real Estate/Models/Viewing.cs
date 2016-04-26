@@ -22,6 +22,11 @@ namespace Real_Estate.Models
         [ForeignKey("PersonID")]
         public ICollection<Customer> Customers { get; set; }
 
+        public int AgentRefID { get; set; }
+
+        [ForeignKey]
+        public Agent Agent { get; set; }
+
         // Other attributes 
         public DateTime ViewingStart { get; set; }  
         public DateTime ViewingStop { get; set; }   
