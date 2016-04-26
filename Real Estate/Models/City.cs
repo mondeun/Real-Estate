@@ -12,5 +12,6 @@ namespace Real_Estate.Models
         public int CityID { get; set; }
         public string CityName { get; set; }
 
+        public virtual ICollection<Office> Offices { get; set; }
     }
 }
