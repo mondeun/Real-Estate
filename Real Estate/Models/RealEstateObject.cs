@@ -30,22 +30,14 @@ namespace Real_Estate.Models
 
         public EstateType EstateType { get; set; }
 
-        public int? AgentRefID { get; set; }
-        [ForeignKey("AgentRefID")]
         public virtual Agent Agent { get; set; }
 
         public int sqm { get; set; }
 
         public string Address { get; set; }
 
-        public int CityRefID { get; set; }
-
-        [ForeignKey("CityRefID")]
         public virtual City City { get; set; }
 
-        public int ZipCodeRefID { get; set; }
-
-        [ForeignKey("ZipCodeRefID")]
         public virtual ZipCode ZipCode { get; set; }
 
         public DateTime DateOnMarket { get; set; }

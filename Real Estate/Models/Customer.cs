@@ -11,6 +11,7 @@ namespace Real_Estate.Models
     {
         // Foreign key - Many to many
         public int ViewingID { get; set; }
+
         [ForeignKey("ViewingID")]
         public virtual ICollection<Viewing> Viewings { get; set; }
 

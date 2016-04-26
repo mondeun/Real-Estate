@@ -11,7 +11,6 @@ namespace Real_Estate.Models
     {
         // Foreign key - One to Many 
         public int OfficeID { get; set; }
-        [ForeignKey("OfficeID")]
         public virtual Office Office { get; set; }  //TODO Office is empty - Andres does
     }
 }

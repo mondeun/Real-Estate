@@ -19,14 +19,8 @@ namespace Real_Estate.Models
 
         public string  OfficeName { get; set; }
 
-        public int CityRefID { get; set; }
-
-        [ForeignKey("CityRefID")]
         public virtual City City { get; set; }
 
-        public int ZipCodeRefID { get; set; }
-
-        [ForeignKey("ZipCodeRefID")]
         public virtual ZipCode ZipCode { get; set; }
 
         public string Address { get; set; }
