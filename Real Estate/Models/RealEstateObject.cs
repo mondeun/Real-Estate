@@ -32,6 +32,8 @@ namespace Real_Estate.Models
 
         public virtual Agent Agent { get; set; }
 
+        public virtual Customer Customer { get; set; }
+
         public int sqm { get; set; }
 
         public string Address { get; set; }
