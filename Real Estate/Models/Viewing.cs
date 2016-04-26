@@ -23,6 +23,6 @@ namespace Real_Estate.Models
         // Other attributes 
         public DateTime ViewingStart { get; set; }  
         public DateTime ViewingStop { get; set; }   
-        public int NbrOfCustomerPerViewing { get; set; }    
+        public int MaximumNoCustomerPerViewing { get; set; }    
     }
 }

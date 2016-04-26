@@ -32,7 +32,9 @@ namespace Real_Estate.Models
 
         public virtual Agent Agent { get; set; }
 
-        public int sqm { get; set; }
+        public virtual Customer Customer { get; set; }
+
+        public int Sqm { get; set; }
 
         public string Address { get; set; }
 
@@ -44,7 +46,6 @@ namespace Real_Estate.Models
 
         public DateTime? SaleDate { get; set; } //Allow nullable? Check this one
 
-        public bool Sold { get; set; }
 
 
     }

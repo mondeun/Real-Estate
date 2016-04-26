@@ -14,6 +14,6 @@ namespace Real_Estate.Models
         public virtual ICollection<Office> Offices { get; set; }
 
         //Other attributes
-        public string zipCode { get; set; }
+        public string ZipCodes { get; set; }
     }
 }
