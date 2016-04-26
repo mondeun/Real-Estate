@@ -14,15 +14,15 @@ namespace Real_Estate.Models
         public int PersonID { get; set; }
 
         //Foreign key One to many 
-        public int ZipCodeID { get; set; }  
+        public int ZipCodeRefID { get; set; }  
          
-        [ForeignKey("ZipCodeId")]
+        [ForeignKey("ZipCodeRefID")]
         public ZipCode ZipCode { get; set; }
 
         //Foreign key One to many 
-        public int CityID { get; set; } 
+        public int CityRefID { get; set; } 
             
-        [ForeignKey("CityID")]
+        [ForeignKey("CityRefID")]
         public City City { get; set; }  //TODO City is empty - Andres does
 
         // Other attributes
