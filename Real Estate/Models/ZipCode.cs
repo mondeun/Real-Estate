@@ -15,12 +15,5 @@ namespace Real_Estate.Models
 
         //Other attributes
         public string zipCode { get; set; }
-
-        //TODO: Is it OK?
-        public ZipCode()
-        {
-            People = new HashSet<Person>();
-            Offices = new HashSet<Office>();
-        }
     }
 }

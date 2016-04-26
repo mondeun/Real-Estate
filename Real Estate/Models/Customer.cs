@@ -10,17 +10,7 @@ namespace Real_Estate.Models
     public class Customer : Person
     {
         // Foreign key - Many to many
-        public int ViewingID { get; set; }
-
-        [ForeignKey("ViewingID")]
         public virtual ICollection<Viewing> Viewings { get; set; }
 
-        public virtual ICollection<RealEstateObject> RealEstateObjects { get; set; }
-
-        public Customer()
-        {
-            Viewings = new HashSet<Viewing>();
-            RealEstateObjects = new HashSet<RealEstateObject>();
-        }
     }
 }

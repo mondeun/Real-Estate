@@ -24,10 +24,5 @@ namespace Real_Estate.Models
         public DateTime ViewingStart { get; set; }  
         public DateTime ViewingStop { get; set; }   
         public int NbrOfCustomerPerViewing { get; set; }    
-
-        public Viewing()
-        {
-            Customers = new HashSet<Customer>();
-        }
     }
 }
