@@ -7,6 +7,7 @@ using System.Web;
 
 namespace Real_Estate.Models
 {
+    
     public class EstateType
     {
         public int EstateTypeID { get; set; }
