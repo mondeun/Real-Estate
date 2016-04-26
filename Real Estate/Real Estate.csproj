@@ -120,11 +120,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="City.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="EstateType.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Office.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RealStateObject.cs" />
+    <Compile Include="TypeOfContract.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
