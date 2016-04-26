@@ -24,7 +24,7 @@ namespace Real_Estate.Models
     }
     public class RealEstateObject
     {
-        public int RealStateObjectID { get; set; }
+        public int RealEstateObjectID { get; set; }
 
         public ContractType Contract {get; set;}
 
