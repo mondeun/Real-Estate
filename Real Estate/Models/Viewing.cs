@@ -15,17 +15,17 @@ namespace Real_Estate.Models
         //Foreign key - One to many 
         public int RealEstateObjectID { get; set; }     
         [ForeignKey("RealEstateObjectID")]
-        public RealEstateObject RealEstateObject { get; set; }  //RealEstateObject is empty - Andres does
+        public virtual RealEstateObject RealEstateObject { get; set; }  //RealEstateObject is empty - Andres does
 
         //Foreign key - Many to many
         public int PersonID { get; set; }    
         [ForeignKey("PersonID")]
-        public ICollection<Customer> Customers { get; set; }
+        public virtual ICollection<Customer> Customers { get; set; }
 
         public int AgentRefID { get; set; }
 
         [ForeignKey("AgentRefID")]
-        public Agent Agent { get; set; }
+        public virtual Agent Agent { get; set; }
 
         // Other attributes 
         public DateTime ViewingStart { get; set; }  

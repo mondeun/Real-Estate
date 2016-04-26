@@ -10,7 +10,7 @@ namespace Real_Estate.Models
         // Primary key
         public int ZipCodeID { get; set; }
 
-        public ICollection<Person> People { get; set; } //TODO: Is it OK?
+        public virtual ICollection<Person> People { get; set; } //TODO: Is it OK?
 
         //Other attributes
         public string ZipCodes { get; set; }

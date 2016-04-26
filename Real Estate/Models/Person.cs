@@ -17,13 +17,13 @@ namespace Real_Estate.Models
         public int ZipCodeRefID { get; set; }  
          
         [ForeignKey("ZipCodeRefID")]
-        public ZipCode ZipCode { get; set; }
+        public virtual ZipCode ZipCode { get; set; }
 
         //Foreign key One to many 
         public int CityRefID { get; set; } 
             
         [ForeignKey("CityRefID")]
-        public City City { get; set; }  //TODO City is empty - Andres does
+        public virtual City City { get; set; }  //TODO City is empty - Andres does
 
         // Other attributes
         public string FirstName { get; set; }
