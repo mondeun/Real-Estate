@@ -9,15 +9,26 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Real_Estate.Models
 {
-     public  class RealEstateObject
+    public enum ContractType
+    {
+        Condo,
+        Rental,
+        Residential
+
+    }
+    public enum EstateType
+    {
+        House,
+        Apartment,
+        Garage
+    }
+    public class RealEstateObject
     {
         public int RealStateObjectID { get; set; }
 
-        public int? TypeOfContractRefID { get; set; }
-        [ForeignKey("TypeOfContractRefID")]
+        public ContractType Contract {get; set;}
 
-        public int? EstateTypeRefID { get; set; }
-        [ForeignKey("EstateTypeRefID")]
+        public EstateType EstateType { get; set; }
 
         public int? AgentRefID { get; set; }
         [ForeignKey("AgentRefID")]
