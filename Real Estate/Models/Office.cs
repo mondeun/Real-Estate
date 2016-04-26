@@ -15,11 +15,15 @@ namespace Real_Estate.Models
 
         public string  OfficeName { get; set; }
 
-        public int? CityRefID { get; set; }
-        [ForeignKey("CityRefID")]
+        public int CityRefID { get; set; }
 
-        public int? ZipCodeRefID { get; set; }
+        [ForeignKey("CityRefID")]
+        public City City { get; set; }
+
+        public int ZipCodeRefID { get; set; }
+
         [ForeignKey("ZipCodeRefID")]
+        public Zipcode Zipcode { get; set; }
 
         public string Address { get; set; }
     }
