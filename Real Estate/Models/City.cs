@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web;
+
+namespace Real_Estate
+{
+    public class City
+    {
+        public int CityID { get; set; }
+        public string CityName { get; set; }
+    }
+}

@@ -133,8 +133,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Agent.cs" />
+    <Compile Include="Models\City.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\EstateType.cs" />
+    <Compile Include="Models\Office.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\RealStateObject.cs" />
+    <Compile Include="Models\TypeOfContract.cs" />
     <Compile Include="Models\Viewing.cs" />
     <Compile Include="Models\ZipCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
