@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Real_Estate.Models
 {
-     public  class RealStateObject
+     public  class RealEstateObject
     {
         public int RealStateObjectID { get; set; }
 
