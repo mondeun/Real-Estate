@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Real_Estate
+namespace Real_Estate.Models
 {
     public class City
     {
         public int CityID { get; set; }
         public string CityName { get; set; }
+
     }
 }
