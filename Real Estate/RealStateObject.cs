@@ -34,7 +34,7 @@ namespace Real_Estate
 
         public DateTime DateOnMarket { get; set; }
 
-        public DateTime SaleDate { get; set; }
+        public DateTime? SaleDate { get; set; } //Allow nullable? Check this one
 
         public bool Sold { get; set; }
 
