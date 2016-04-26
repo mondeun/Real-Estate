@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace RealEstateManagmentSystem
+namespace Real_Estate.Models
 {
     public class ZipCode
     {   
