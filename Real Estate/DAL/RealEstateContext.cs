@@ -29,6 +29,16 @@ namespace Real_Estate.DAL
         {
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+            modelBuilder.Entity<Viewing>()
+                .HasMany<Customer>(s => s.Customers)
+                .WithMany(c => c.Viewings)
+                .Map(cs =>
+                {
+                    cs.MapLeftKey("ViewingID");
+                    cs.MapRightKey("CustomerID");
+                    cs.ToTable("ViewingCustomer");
+                });
         }
     }
 }

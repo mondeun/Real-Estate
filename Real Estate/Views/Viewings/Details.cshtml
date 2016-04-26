@@ -1,0 +1,65 @@
+﻿@model Real_Estate.Models.Viewing
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Viewing</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Agent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Agent.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RealEstateObject.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RealEstateObject.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ViewingStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ViewingStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ViewingStop)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ViewingStop)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaximumNoCustomerPerViewing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaximumNoCustomerPerViewing)
+        </dd>
+        <dt> @Html.DisplayNameFor(model => model.Customers) </dt>
+        <dd>
+            <table class="table">
+                <tr> <th>Booked viewings</th> <th>Name</th> </tr> @foreach (var item in Model.Customers)
+                {
+                    <tr> <td> @Html.DisplayFor(modelItem => item.FullName) </td> <td> @Html.DisplayFor(modelItem => item.Viewings) </td> </tr> }
+            </table>
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ViewingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
