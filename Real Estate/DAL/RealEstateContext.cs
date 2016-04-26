@@ -10,7 +10,11 @@ namespace Real_Estate.DAL
 {
     public class RealEstateContext : DbContext
     {
-        public RealEstateContext() : base("RealEstateContext") { }
+        public RealEstateContext() : base("RealEstateContext")
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<RealEstateContext, 
+                Real_Estate.Migrations.Configuration>("RealEstateContext"));
+        }
 
         public DbSet<Agent> Agents { get; set; }
         public DbSet<City> Cities { get; set; }
