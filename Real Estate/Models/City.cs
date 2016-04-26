@@ -9,11 +9,6 @@ namespace Real_Estate.Models
 {
     public class City
     {
-        public City()
-        {
-            this.Offices = new HashSet<Office>();
-            this.Persons = new HashSet<Person>();
-        }
 
         public int CityID { get; set; }
         public string CityName { get; set; }
