@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Real_Estate
+namespace Real_Estate.Models
 {
     public class EstateType
     {

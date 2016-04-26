@@ -139,7 +139,7 @@
     <Compile Include="Models\EstateType.cs" />
     <Compile Include="Models\Office.cs" />
     <Compile Include="Models\Person.cs" />
-    <Compile Include="Models\RealStateObject.cs" />
+    <Compile Include="Models\RealEstateObject.cs" />
     <Compile Include="Models\TypeOfContract.cs" />
     <Compile Include="Models\Viewing.cs" />
     <Compile Include="Models\ZipCode.cs" />
