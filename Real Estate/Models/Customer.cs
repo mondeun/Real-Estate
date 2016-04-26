@@ -10,8 +10,8 @@ namespace Real_Estate.Models
     public class Customer : Person
     {
         // Foreign key - Many to many
-        public int ViewingId { get; set; }
-        [ForeignKey("ViewingId")]
+        public int ViewingID { get; set; }
+        [ForeignKey("ViewingID")]
         public ICollection<Viewing> Viewings { get; set; }
 
         public Customer()

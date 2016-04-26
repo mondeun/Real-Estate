@@ -11,18 +11,18 @@ namespace Real_Estate.Models
     public class Person
     {
         // Primary key
-        public int PersonId { get; set; }
+        public int PersonID { get; set; }
 
         //Foreign key One to many 
-        public int ZipCodeId { get; set; }  
+        public int ZipCodeID { get; set; }  
          
         [ForeignKey("ZipCodeId")]
         public ZipCode ZipCode { get; set; }
 
         //Foreign key One to many 
-        public int CityId { get; set; } 
+        public int CityID { get; set; } 
             
-        [ForeignKey("CityId")]
+        [ForeignKey("CityID")]
         public City City { get; set; }  //TODO City is empty - Andres does
 
         // Other attributes

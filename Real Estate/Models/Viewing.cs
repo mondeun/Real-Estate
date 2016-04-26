@@ -10,16 +10,16 @@ namespace Real_Estate.Models
     public class Viewing
     {
         //Primary key
-        public int ViewingId { get; set; }
+        public int ViewingID { get; set; }
 
         //Foreign key - One to many 
-        public int RealEstateObjectId { get; set; }     
-        [ForeignKey("RealEstateObjectId")]
+        public int RealEstateObjectID { get; set; }     
+        [ForeignKey("RealEstateObjectID")]
         public RealEstateObject RealEstateObject { get; set; }  //RealEstateObject is empty - Andres does
 
         //Foreign key - Many to many
         public int PersonId { get; set; }    
-        [ForeignKey("PersonId")]
+        [ForeignKey("PersonID")]
         public ICollection<Customer> Customers { get; set; }
 
         // Other attributes 

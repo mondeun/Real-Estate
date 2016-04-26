@@ -8,7 +8,7 @@ namespace Real_Estate.Models
     public class ZipCode
     {   
         // Primary key
-        public int ZipCodeId { get; set; }
+        public int ZipCodeID { get; set; }
 
         public ICollection<Person> People { get; set; } //TODO: Is it OK?
 

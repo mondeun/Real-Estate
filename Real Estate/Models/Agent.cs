@@ -10,8 +10,8 @@ namespace Real_Estate.Models
     public class Agent : Person
     {
         // Foreign key - One to Many 
-        public int OfficeId { get; set; }
-        [ForeignKey("OfficeId")]
+        public int OfficeID { get; set; }
+        [ForeignKey("OfficeID")]
         public Office Office { get; set; }  //TODO Office is empty - Andres does
     }
 }
