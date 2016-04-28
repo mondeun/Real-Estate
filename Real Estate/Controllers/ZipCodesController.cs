@@ -15,6 +15,7 @@ namespace Real_Estate.Controllers
     {
         private RealEstateContext db = new RealEstateContext();
 
+
         // GET: ZipCodes
         public ActionResult Index()
         {
@@ -47,7 +48,7 @@ namespace Real_Estate.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ZipCodeID,ZipCodes")] ZipCode zipCode)
+        public ActionResult Create([Bind(Include = "ZipCodeID,ZipCodes,PricePerSqm")] ZipCode zipCode)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +80,7 @@ namespace Real_Estate.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ZipCodeID,ZipCodes")] ZipCode zipCode)
+        public ActionResult Edit([Bind(Include = "ZipCodeID,ZipCodes,PricePerSqm")] ZipCode zipCode)
         {
             if (ModelState.IsValid)
             {
