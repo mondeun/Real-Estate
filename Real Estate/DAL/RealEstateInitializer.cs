@@ -36,6 +36,15 @@ namespace Real_Estate.DAL
             };
             zipCodes.ForEach(z => context.ZipCodes.Add(z));
             context.SaveChanges();
+
+            var offices = new List<Office>
+            {
+                new Office {OfficeName = "Goda Hem", Address = "Storgatan 4", ZipCodeID = 1, CityID = 6},
+                new Office {OfficeName = "Sylen", Address = "Eriksväg 23", ZipCodeID = 2, CityID = 7},
+                new Office {OfficeName = "Bosses Hörna", Address = "Leifgatan 31", ZipCodeID = 4, CityID = 2}
+            };
+            offices.ForEach(o => context.Offices.Add(o));
+            context.SaveChanges();
         }
     }
 }
