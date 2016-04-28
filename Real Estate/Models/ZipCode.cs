@@ -15,5 +15,7 @@ namespace Real_Estate.Models
 
         //Other attributes
         public string ZipCodes { get; set; }
+
+        public decimal PricePerSqm { get; set; }
     }
 }
