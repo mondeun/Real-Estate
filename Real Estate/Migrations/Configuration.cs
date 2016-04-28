@@ -40,6 +40,44 @@ namespace Real_Estate.Migrations
                 new Office {OfficeID = 2, OfficeName = "Sylen", Address = "Eriksväg 23", ZipCodeID = 2, CityID = 7},
                 new Office {OfficeID = 3, OfficeName = "Bosses Hörna", Address = "Leifgatan 31", ZipCodeID = 4, CityID = 2}
                 );
+
+            context.Agents.AddOrUpdate(x => x.PersonID,
+                new Agent
+                {
+                    PersonID = 1,
+                    FirstName = "Leif",
+                    LastName = "Nilsson",
+                    Pnr = "123456789",
+                    Address = "Gnidstigen 84",
+                    ZipCodeID = 2,
+                    CityID = 3,
+                    Email = "kaptenskutan@hotmail.se",
+                    OfficeID = 2
+                },
+                new Agent
+                {
+                    PersonID = 2,
+                    FirstName = "Runar",
+                    LastName = "Gunnarsson",
+                    Pnr = "56342146",
+                    Address = "Asgatan 69",
+                    ZipCodeID = 4,
+                    CityID = 4,
+                    Email = "bayern_1337@gmail.com",
+                    OfficeID = 2
+                },
+                new Agent
+                {
+                    PersonID = 3,
+                    FirstName = "Michael",
+                    LastName = "Glaustratte",
+                    Pnr = "8604042413",
+                    Address = "Kolonigatan 29",
+                    ZipCodeID =  1,
+                    CityID = 6,
+                    Email = "bois_sm_gold@hotmail.com",
+                    OfficeID = 1}
+                );
         }
     }
 }
