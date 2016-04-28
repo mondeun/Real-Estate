@@ -18,7 +18,7 @@ namespace Real_Estate.Controllers
         // GET: Agents
         public ActionResult Index()
         {
-            var persons = db.Agents.Include(a => a.Office);
+            var persons = db.Agents.Include(a => a.City).Include(a => a.ZipCode).Include(a => a.Office);
             return View(persons.ToList());
         }
 
@@ -40,6 +40,8 @@ namespace Real_Estate.Controllers
         // GET: Agents/Create
         public ActionResult Create()
         {
+            ViewBag.CityID = new SelectList(db.Cities, "CityID", "CityName");
+            ViewBag.ZipcodeID = new SelectList(db.ZipCodes, "ZipCodeID", "ZipCodes");
             ViewBag.OfficeID = new SelectList(db.Offices, "OfficeID", "OfficeName");
             return View();
         }
@@ -49,7 +51,7 @@ namespace Real_Estate.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PersonID,FirstName,LastName,Pnr,Address,Email,OfficeID")] Agent agent)
+        public ActionResult Create([Bind(Include = "PersonID,ZipcodeID,CityID,FirstName,LastName,Pnr,Address,Email,OfficeID")] Agent agent)
         {
             if (ModelState.IsValid)
             {
@@ -58,6 +60,8 @@ namespace Real_Estate.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.CityID = new SelectList(db.Cities, "CityID", "CityName", agent.CityID);
+            ViewBag.ZipcodeID = new SelectList(db.ZipCodes, "ZipCodeID", "ZipCodes", agent.ZipcodeID);
             ViewBag.OfficeID = new SelectList(db.Offices, "OfficeID", "OfficeName", agent.OfficeID);
             return View(agent);
         }
@@ -74,6 +78,8 @@ namespace Real_Estate.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.CityID = new SelectList(db.Cities, "CityID", "CityName", agent.CityID);
+            ViewBag.ZipcodeID = new SelectList(db.ZipCodes, "ZipCodeID", "ZipCodes", agent.ZipcodeID);
             ViewBag.OfficeID = new SelectList(db.Offices, "OfficeID", "OfficeName", agent.OfficeID);
             return View(agent);
         }
@@ -83,7 +89,7 @@ namespace Real_Estate.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PersonID,FirstName,LastName,Pnr,Address,Email,OfficeID")] Agent agent)
+        public ActionResult Edit([Bind(Include = "PersonID,ZipcodeID,CityID,FirstName,LastName,Pnr,Address,Email,OfficeID")] Agent agent)
         {
             if (ModelState.IsValid)
             {
@@ -91,6 +97,8 @@ namespace Real_Estate.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.CityID = new SelectList(db.Cities, "CityID", "CityName", agent.CityID);
+            ViewBag.ZipcodeID = new SelectList(db.ZipCodes, "ZipCodeID", "ZipCodes", agent.ZipcodeID);
             ViewBag.OfficeID = new SelectList(db.Offices, "OfficeID", "OfficeName", agent.OfficeID);
             return View(agent);
         }

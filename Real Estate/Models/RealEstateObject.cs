@@ -47,9 +47,11 @@ namespace Real_Estate.Models
 
         public int ZipCodeID { get; set; }
         public virtual ZipCode ZipCode { get; set; }
-
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DateOnMarket { get; set; }
-
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? SaleDate { get; set; } //Allow nullable? Check this one
 
         public virtual ICollection<Viewing> Viewings { get; set; }

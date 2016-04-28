@@ -25,7 +25,9 @@ namespace Real_Estate.Models
 
         public virtual Agent Agent { get; set; }
         // Other attributes 
-        public DateTime ViewingStart { get; set; }  
+        [DataType(DataType.DateTime)]
+        public DateTime ViewingStart { get; set; }
+        [DataType(DataType.DateTime)]
         public DateTime ViewingStop { get; set; }   
         public int MaximumNoCustomerPerViewing { get; set; }
         public virtual ICollection<Customer> Customers { get; set; }

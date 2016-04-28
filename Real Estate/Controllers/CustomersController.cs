@@ -18,7 +18,8 @@ namespace Real_Estate.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            return View(db.Customers.ToList());
+            var persons = db.Customers.Include(c => c.City).Include(c => c.ZipCode);
+            return View(persons.ToList());
         }
 
         // GET: Customers/Details/5
@@ -39,6 +40,8 @@ namespace Real_Estate.Controllers
         // GET: Customers/Create
         public ActionResult Create()
         {
+            ViewBag.CityID = new SelectList(db.Cities, "CityID", "CityName");
+            ViewBag.ZipcodeID = new SelectList(db.ZipCodes, "ZipCodeID", "ZipCodes");
             return View();
         }
 
@@ -47,7 +50,7 @@ namespace Real_Estate.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PersonID,FirstName,LastName,Pnr,Address,Email")] Customer customer)
+        public ActionResult Create([Bind(Include = "PersonID,ZipcodeID,CityID,FirstName,LastName,Pnr,Address,Email")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -56,6 +59,8 @@ namespace Real_Estate.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.CityID = new SelectList(db.Cities, "CityID", "CityName", customer.CityID);
+            ViewBag.ZipcodeID = new SelectList(db.ZipCodes, "ZipCodeID", "ZipCodes", customer.ZipcodeID);
             return View(customer);
         }
 
@@ -71,6 +76,8 @@ namespace Real_Estate.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.CityID = new SelectList(db.Cities, "CityID", "CityName", customer.CityID);
+            ViewBag.ZipcodeID = new SelectList(db.ZipCodes, "ZipCodeID", "ZipCodes", customer.ZipcodeID);
             return View(customer);
         }
 
@@ -79,7 +86,7 @@ namespace Real_Estate.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PersonID,FirstName,LastName,Pnr,Address,Email")] Customer customer)
+        public ActionResult Edit([Bind(Include = "PersonID,ZipcodeID,CityID,FirstName,LastName,Pnr,Address,Email")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +94,8 @@ namespace Real_Estate.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.CityID = new SelectList(db.Cities, "CityID", "CityName", customer.CityID);
+            ViewBag.ZipcodeID = new SelectList(db.ZipCodes, "ZipCodeID", "ZipCodes", customer.ZipcodeID);
             return View(customer);
         }
 
