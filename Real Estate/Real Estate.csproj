@@ -128,7 +128,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AgentsController.cs" />
+    <Compile Include="Controllers\CitiesController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OfficesController.cs" />
+    <Compile Include="Controllers\RealEstateObjectsController.cs" />
+    <Compile Include="Controllers\ViewingsController.cs" />
+    <Compile Include="Controllers\ZipCodesController.cs" />
     <Compile Include="DAL\RealEstateContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -181,6 +188,41 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\ZipCodes\Create.cshtml" />
+    <Content Include="Views\ZipCodes\Delete.cshtml" />
+    <Content Include="Views\ZipCodes\Details.cshtml" />
+    <Content Include="Views\ZipCodes\Edit.cshtml" />
+    <Content Include="Views\ZipCodes\Index.cshtml" />
+    <Content Include="Views\Agents\Create.cshtml" />
+    <Content Include="Views\Agents\Delete.cshtml" />
+    <Content Include="Views\Agents\Details.cshtml" />
+    <Content Include="Views\Agents\Edit.cshtml" />
+    <Content Include="Views\Agents\Index.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Cities\Create.cshtml" />
+    <Content Include="Views\Cities\Delete.cshtml" />
+    <Content Include="Views\Cities\Details.cshtml" />
+    <Content Include="Views\Cities\Edit.cshtml" />
+    <Content Include="Views\Cities\Index.cshtml" />
+    <Content Include="Views\Offices\Create.cshtml" />
+    <Content Include="Views\Offices\Delete.cshtml" />
+    <Content Include="Views\Offices\Details.cshtml" />
+    <Content Include="Views\Offices\Edit.cshtml" />
+    <Content Include="Views\Offices\Index.cshtml" />
+    <Content Include="Views\RealEstateObjects\Create.cshtml" />
+    <Content Include="Views\RealEstateObjects\Delete.cshtml" />
+    <Content Include="Views\RealEstateObjects\Details.cshtml" />
+    <Content Include="Views\RealEstateObjects\Edit.cshtml" />
+    <Content Include="Views\RealEstateObjects\Index.cshtml" />
+    <Content Include="Views\Viewings\Create.cshtml" />
+    <Content Include="Views\Viewings\Delete.cshtml" />
+    <Content Include="Views\Viewings\Details.cshtml" />
+    <Content Include="Views\Viewings\Edit.cshtml" />
+    <Content Include="Views\Viewings\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

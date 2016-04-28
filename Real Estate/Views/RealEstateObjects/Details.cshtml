@@ -1,0 +1,98 @@
+﻿@model Real_Estate.Models.RealEstateObject
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RealEstateObject</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Agent.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Agent.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City.CityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City.CityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZipCode.ZipCodes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZipCode.ZipCodes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contract)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contract)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstateType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstateType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sqm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sqm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOnMarket)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOnMarket)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SaleDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaleDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RealEstateObjectID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

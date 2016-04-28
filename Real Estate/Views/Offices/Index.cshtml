@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Real_Estate.Models.Office>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.City.CityName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZipCode.ZipCodes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OfficeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.City.CityName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZipCode.ZipCodes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OfficeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OfficeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OfficeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OfficeID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,64 @@
+﻿@model Real_Estate.Models.Viewing
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Viewing</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Agent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Agent.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RealEstateObject.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RealEstateObject.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ViewingStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ViewingStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ViewingStop)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ViewingStop)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaximumNoCustomerPerViewing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaximumNoCustomerPerViewing)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

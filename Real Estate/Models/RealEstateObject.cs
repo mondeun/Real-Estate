@@ -30,21 +30,29 @@ namespace Real_Estate.Models
 
         public EstateType EstateType { get; set; }
 
+        public int? AgentID { get; set; }
+        [ForeignKey("AgentID")]
         public virtual Agent Agent { get; set; }
 
+        public int? CustomerID { get; set; }
+        [ForeignKey("CustomerID")]
         public virtual Customer Customer { get; set; }
 
         public int Sqm { get; set; }
 
         public string Address { get; set; }
 
+        public int CityID { get; set; }
         public virtual City City { get; set; }
 
+        public int ZipCodeID { get; set; }
         public virtual ZipCode ZipCode { get; set; }
 
         public DateTime DateOnMarket { get; set; }
 
         public DateTime? SaleDate { get; set; } //Allow nullable? Check this one
+
+        public virtual ICollection<Viewing> Viewings { get; set; }
 
 
 

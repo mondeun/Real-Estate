@@ -19,9 +19,11 @@ namespace Real_Estate.Models
 
         public string  OfficeName { get; set; }
 
+        public int CityID { get; set; }
         [Column("CityID")]
         public virtual City City { get; set; }
 
+        public int ZipCodeID { get; set; }
         public virtual ZipCode ZipCode { get; set; }
 
         public string Address { get; set; }
