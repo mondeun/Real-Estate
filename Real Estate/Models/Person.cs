@@ -14,7 +14,7 @@ namespace Real_Estate.Models
         public int PersonID { get; set; }
 
         //Foreign key One to many 
-        public int ZipcodeID { get; set; }
+        public int ZipCodeID { get; set; }
 
         public virtual ZipCode ZipCode { get; set; }
 

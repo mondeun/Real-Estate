@@ -61,7 +61,7 @@ namespace Real_Estate.Controllers
             }
 
             ViewBag.CityID = new SelectList(db.Cities, "CityID", "CityName", agent.CityID);
-            ViewBag.ZipcodeID = new SelectList(db.ZipCodes, "ZipCodeID", "ZipCodes", agent.ZipcodeID);
+            ViewBag.ZipcodeID = new SelectList(db.ZipCodes, "ZipCodeID", "ZipCodes", agent.ZipCodeID);
             ViewBag.OfficeID = new SelectList(db.Offices, "OfficeID", "OfficeName", agent.OfficeID);
             return View(agent);
         }
@@ -79,7 +79,7 @@ namespace Real_Estate.Controllers
                 return HttpNotFound();
             }
             ViewBag.CityID = new SelectList(db.Cities, "CityID", "CityName", agent.CityID);
-            ViewBag.ZipcodeID = new SelectList(db.ZipCodes, "ZipCodeID", "ZipCodes", agent.ZipcodeID);
+            ViewBag.ZipcodeID = new SelectList(db.ZipCodes, "ZipCodeID", "ZipCodes", agent.ZipCodeID);
             ViewBag.OfficeID = new SelectList(db.Offices, "OfficeID", "OfficeName", agent.OfficeID);
             return View(agent);
         }
@@ -98,7 +98,7 @@ namespace Real_Estate.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.CityID = new SelectList(db.Cities, "CityID", "CityName", agent.CityID);
-            ViewBag.ZipcodeID = new SelectList(db.ZipCodes, "ZipCodeID", "ZipCodes", agent.ZipcodeID);
+            ViewBag.ZipcodeID = new SelectList(db.ZipCodes, "ZipCodeID", "ZipCodes", agent.ZipCodeID);
             ViewBag.OfficeID = new SelectList(db.Offices, "OfficeID", "OfficeName", agent.OfficeID);
             return View(agent);
         }
