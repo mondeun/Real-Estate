@@ -137,7 +137,6 @@
     <Compile Include="Controllers\ViewingsController.cs" />
     <Compile Include="Controllers\ZipCodesController.cs" />
     <Compile Include="DAL\RealEstateContext.cs" />
-    <Compile Include="DAL\RealEstateInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
