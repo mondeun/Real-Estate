@@ -76,44 +76,87 @@ namespace Real_Estate.Migrations
                     ZipCodeID =  1,
                     CityID = 6,
                     Email = "bois_sm_gold@hotmail.com",
-                    OfficeID = 1}
-                );
+                    OfficeID = 1
+                });
 
             context.Customers.AddOrUpdate(x => x.PersonID,
                 new Customer
                 {
-                    PersonID = 1,
+                    PersonID = 4,
                     FirstName = "Glenn",
                     LastName = "Killing",
                     Pnr = "7407135646",
                     Address = "Flygargatan 7B",
                     ZipCodeID = 2,
                     CityID = 3,
-                    Email = "torskjagare@yahoo.com",
+                    Email = "torskjagare@yahoo.com"
                 },
                 new Customer
                 {
-                    PersonID = 2,
+                    PersonID = 5,
                     FirstName = "Stefan",
                     LastName = "Karlsson",
                     Pnr = "8311256479",
                     Address = "Fiskargränden 9",
                     ZipCodeID = 4,
                     CityID = 5,
-                    Email = "steffe.karlsson@hotmail.com",
+                    Email = "steffe.karlsson@hotmail.com"
                 },
                 new Customer
                 {
-                    PersonID = 3,
+                    PersonID = 6,
                     FirstName = "Gunilla",
                     LastName = "Larsson",
                     Pnr = "7712063542",
                     Address = "Lingonstigen 12",
                     ZipCodeID = 3,
                     CityID = 4,
-                    Email = "larsson1977@gmail.com",
-                }
-                );
+                    Email = "larsson1977@gmail.com"
+                });
+
+            context.RealEstateObjects.AddOrUpdate(x => x.RealEstateObjectID,
+                new RealEstateObject
+                {
+                    RealEstateObjectID = 1,
+                    Contract = ContractType.Condo,
+                    EstateType = EstateType.Apartment,
+                    AgentID = 1,
+                    CustomerID = 2,
+                    Sqm = 88,
+                    Address = "Rökerigatan 27",
+                    ZipCodeID = 2,
+                    CityID = 2,
+                    DateOnMarket = new DateTime(2016, 4, 15),
+                    SaleDate = null
+                },
+                new RealEstateObject
+                {
+                    RealEstateObjectID = 2,
+                    Contract = ContractType.Rental,
+                    EstateType = EstateType.Apartment,
+                    AgentID = 2,
+                    CustomerID = 3,
+                    Sqm = 120,
+                    Address = "Sturegatan 16",
+                    ZipCodeID = 2,
+                    CityID = 4,
+                    DateOnMarket = new DateTime(2016, 3, 9),
+                    SaleDate = new DateTime(2016, 3, 21)
+                },
+                new RealEstateObject
+                {
+                    RealEstateObjectID = 3,
+                    Contract = ContractType.Residential,
+                    EstateType = EstateType.House,
+                    AgentID = 1,
+                    CustomerID = 2,
+                    Sqm = 180,
+                    Address = "Strandvägen 57",
+                    ZipCodeID = 1,
+                    CityID = 6,
+                    DateOnMarket = new DateTime(2015, 11, 27),
+                    SaleDate = null
+                });
         }
     }
 }
