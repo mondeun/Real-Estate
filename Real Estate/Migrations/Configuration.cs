@@ -157,6 +157,26 @@ namespace Real_Estate.Migrations
                     DateOnMarket = new DateTime(2015, 11, 27),
                     SaleDate = null
                 });
+
+            context.Viewings.AddOrUpdate(x => x.ViewingID,
+                new Viewing
+                {
+                    ViewingID = 1,
+                    RealEstateObjectID = 1,
+                    AgentID = 1,
+                    ViewingStart = new DateTime(2016, 4, 22, 13, 0, 0),
+                    ViewingStop = new DateTime(2016, 4, 22, 16, 0, 0),
+                    MaximumNoCustomerPerViewing = 5
+                },
+                new Viewing
+                {
+                    ViewingID = 2,
+                    RealEstateObjectID = 3,
+                    AgentID = 1,
+                    ViewingStart = new DateTime(2015, 12, 05, 15, 30, 0),
+                    ViewingStop = new DateTime(2015, 12, 05, 18, 0, 0),
+                    MaximumNoCustomerPerViewing = 10
+                });
         }
     }
 }
