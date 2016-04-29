@@ -11,6 +11,5 @@ namespace Real_Estate.Models
     {
         // Foreign key - Many to many
         public virtual ICollection<Viewing> Viewings { get; set; }
-
     }
 }

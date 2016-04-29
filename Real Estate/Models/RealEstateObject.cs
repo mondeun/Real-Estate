@@ -16,12 +16,14 @@ namespace Real_Estate.Models
         Residential
 
     }
+
     public enum EstateType
     {
         House,
         Apartment,
         Garage
     }
+
     public class RealEstateObject
     {
         public int RealEstateObjectID { get; set; }
@@ -38,8 +40,10 @@ namespace Real_Estate.Models
         [ForeignKey("CustomerID")]
         public virtual Customer Customer { get; set; }
 
+        [Required(ErrorMessage = "Square meters are required")]
         public int Sqm { get; set; }
 
+        [Required(ErrorMessage = "Address is required")]
         public string Address { get; set; }
 
         public int CityID { get; set; }
@@ -47,16 +51,15 @@ namespace Real_Estate.Models
 
         public int ZipCodeID { get; set; }
         public virtual ZipCode ZipCode { get; set; }
+
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DateOnMarket { get; set; }
+
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? SaleDate { get; set; } //Allow nullable? Check this one
 
         public virtual ICollection<Viewing> Viewings { get; set; }
-
-
-
     }
 }

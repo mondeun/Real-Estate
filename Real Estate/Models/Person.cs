@@ -13,14 +13,13 @@ namespace Real_Estate.Models
         // Primary key
         public int PersonID { get; set; }
 
-        //Foreign key One to many 
+        // Foreign key One to many 
         public int ZipCodeID { get; set; }
-
         public virtual ZipCode ZipCode { get; set; }
 
+        // Foreign key One to many 
         public int CityID { get; set; }
-        //Foreign key One to many 
-        public virtual City City { get; set; }  //TODO City is empty - Andres does
+        public virtual City City { get; set; }
 
         // Other attributes
         [Required(ErrorMessage = "First name is required")]
@@ -39,14 +38,6 @@ namespace Real_Estate.Models
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
 
-        public string FullName
-        {
-
-            get { return FirstName + " " + LastName; }
-
-        }
-
-        
-
+        public string FullName => FirstName + " " + LastName;
     }
 }
