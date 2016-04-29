@@ -78,6 +78,42 @@ namespace Real_Estate.Migrations
                     Email = "bois_sm_gold@hotmail.com",
                     OfficeID = 1}
                 );
+
+            context.Customers.AddOrUpdate(x => x.PersonID,
+                new Customer
+                {
+                    PersonID = 1,
+                    FirstName = "Glenn",
+                    LastName = "Killing",
+                    Pnr = "7407135646",
+                    Address = "Flygargatan 7B",
+                    ZipCodeID = 2,
+                    CityID = 3,
+                    Email = "torskjagare@yahoo.com",
+                },
+                new Customer
+                {
+                    PersonID = 2,
+                    FirstName = "Stefan",
+                    LastName = "Karlsson",
+                    Pnr = "8311256479",
+                    Address = "Fiskargränden 9",
+                    ZipCodeID = 4,
+                    CityID = 5,
+                    Email = "steffe.karlsson@hotmail.com",
+                },
+                new Customer
+                {
+                    PersonID = 3,
+                    FirstName = "Gunilla",
+                    LastName = "Larsson",
+                    Pnr = "7712063542",
+                    Address = "Lingonstigen 12",
+                    ZipCodeID = 3,
+                    CityID = 4,
+                    Email = "larsson1977@gmail.com",
+                }
+                );
         }
     }
 }
