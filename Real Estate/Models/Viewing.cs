@@ -12,27 +12,27 @@ namespace Real_Estate.Models
         //Primary key
         public int ViewingID { get; set; }
 
-        public int? RealEstateObjectID { get; set; }
-
         //Foreign key - One to many 
+        public int? RealEstateObjectID { get; set; }
         [ForeignKey("RealEstateObjectID")]
-        public virtual RealEstateObject RealEstateObject { get; set; }  //RealEstateObject is empty - Andres does
+        public virtual RealEstateObject RealEstateObject { get; set; }
 
         //Foreign key - Many to many
         public int? AgentID { get; set; }
-
         [ForeignKey("AgentID")]
-
         public virtual Agent Agent { get; set; }
-        // Other attributes 
+        
+        [Required(ErrorMessage = "Set when the viewing begin")]
         [DataType(DataType.DateTime)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime ViewingStart { get; set; }
 
+        [Required(ErrorMessage = "Set when the viewing end")]
         [DataType(DataType.DateTime)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime ViewingStop { get; set; }   
+
+        [Required(ErrorMessage = "Max number of customer viewings are required")]
         public int MaximumNoCustomerPerViewing { get; set; }
+
         public virtual ICollection<Customer> Customers { get; set; }
     }
 }

@@ -11,12 +11,9 @@ namespace Real_Estate.Models
 {
     public class Office
     {
-        public Office()
-        {
-            
-        }
         public int OfficeID { get; set; }
 
+        [Required(ErrorMessage = "Office name is required")]
         public string  OfficeName { get; set; }
 
         public int? CityID { get; set; }
@@ -26,8 +23,7 @@ namespace Real_Estate.Models
         public int? ZipCodeID { get; set; }
         public virtual ZipCode ZipCode { get; set; }
 
+        [Required(ErrorMessage = "Address is required")]
         public string Address { get; set; }
-
-       
     }
 }
