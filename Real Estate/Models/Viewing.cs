@@ -26,8 +26,11 @@ namespace Real_Estate.Models
         public virtual Agent Agent { get; set; }
         // Other attributes 
         [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime ViewingStart { get; set; }
+
         [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime ViewingStop { get; set; }   
         public int MaximumNoCustomerPerViewing { get; set; }
         public virtual ICollection<Customer> Customers { get; set; }

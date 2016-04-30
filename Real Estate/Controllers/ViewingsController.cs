@@ -40,7 +40,7 @@ namespace Real_Estate.Controllers
         // GET: Viewings/Create
         public ActionResult Create()
         {
-            ViewBag.AgentID = new SelectList(db.Agents, "PersonID", "FirstName");
+            ViewBag.AgentID = new SelectList(db.Persons, "PersonID", "FirstName");
             ViewBag.RealEstateObjectID = new SelectList(db.RealEstateObjects, "RealEstateObjectID", "Address");
             return View();
         }
@@ -59,7 +59,7 @@ namespace Real_Estate.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AgentID = new SelectList(db.Agents, "PersonID", "FullName", viewing.AgentID);
+            ViewBag.AgentID = new SelectList(db.Persons, "PersonID", "FirstName", viewing.AgentID);
             ViewBag.RealEstateObjectID = new SelectList(db.RealEstateObjects, "RealEstateObjectID", "Address", viewing.RealEstateObjectID);
             return View(viewing);
         }
@@ -76,7 +76,7 @@ namespace Real_Estate.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AgentID = new SelectList(db.Agents, "PersonID", "FullName", viewing.AgentID);
+            ViewBag.AgentID = new SelectList(db.Persons, "PersonID", "FirstName", viewing.AgentID);
             ViewBag.RealEstateObjectID = new SelectList(db.RealEstateObjects, "RealEstateObjectID", "Address", viewing.RealEstateObjectID);
             return View(viewing);
         }
@@ -94,7 +94,7 @@ namespace Real_Estate.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AgentID = new SelectList(db.Persons, "PersonID", "FullName", viewing.AgentID);
+            ViewBag.AgentID = new SelectList(db.Persons, "PersonID", "FirstName", viewing.AgentID);
             ViewBag.RealEstateObjectID = new SelectList(db.RealEstateObjects, "RealEstateObjectID", "Address", viewing.RealEstateObjectID);
             return View(viewing);
         }
