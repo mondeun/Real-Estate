@@ -16,9 +16,42 @@ namespace Real_Estate.Controllers
         private RealEstateContext db = new RealEstateContext();
 
         // GET: RealEstateObjects
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
+            ViewBag.AgentSortParam = String.IsNullOrEmpty(sortOrder) ? "agent_desc" : "";
+            ViewBag.CitySortParam = sortOrder == "city_asc" ? "city_desc" : "city_asc";
+            ViewBag.CustomerSortParam = sortOrder == "customer_asc" ? "customer_desc" : "customer_asc";
+            ViewBag.ZipCodeSortParam = sortOrder == "zipcode_asc" ? "zipcode_desc" : "zipcode_asc";
             var realEstateObjects = db.RealEstateObjects.Include(r => r.Agent).Include(r => r.City).Include(r => r.Customer).Include(r => r.ZipCode);
+
+            switch (sortOrder)
+            {
+                case "agent_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.AgentID);
+                    break;
+                case "city_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.CityID);
+                    break;
+                case "city_asc":
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.CityID);
+                    break;
+                case "customer_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.CustomerID);
+                    break;
+                case "customer_asc":
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.CustomerID);
+                    break;
+                case "zipcode_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.ZipCodeID);
+                    break;
+                case "zipcode_asc":
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.ZipCodeID);
+                    break;
+                default:
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.AgentID);
+                    break;
+            }
+
             return View(realEstateObjects.ToList());
         }
 
