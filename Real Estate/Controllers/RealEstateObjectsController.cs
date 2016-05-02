@@ -25,6 +25,10 @@ namespace Real_Estate.Controllers
             ViewBag.ContractSortParam = sortOrder == "contract_asc" ? "contract_desc" : "contract_asc";
             ViewBag.EstateSortParam = sortOrder == "estate_asc" ? "estate_desc" : "estate_asc";
             ViewBag.SqmSortParam = sortOrder == "sqm_asc" ? "sqm_desc" : "sqm_asc";
+            ViewBag.AddressSortParam = sortOrder == "addr_asc" ? "addr_desc" : "addr_asc";
+            ViewBag.DateOnMarketSortParam = sortOrder == "datemarket_asc" ? "datemarket_desc" : "datemarket_asc";
+            ViewBag.SaleDateSortParam = sortOrder == "saledate_asc" ? "saledate_desc" : "saledate_asc";
+
             var realEstateObjects = db.RealEstateObjects.Include(r => r.Agent).Include(r => r.City).Include(r => r.Customer).Include(r => r.ZipCode);
 
             switch (sortOrder)
@@ -67,6 +71,24 @@ namespace Real_Estate.Controllers
                     break;
                 case "sqm_asc":
                     realEstateObjects = realEstateObjects.OrderBy(r => r.Sqm);
+                    break;
+                case "addr_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.Address);
+                    break;
+                case "addr_asc":
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.Address);
+                    break;
+                case "datemarket_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.DateOnMarket);
+                    break;
+                case "datemarket_asc":
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.DateOnMarket);
+                    break;
+                case "saledate_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.SaleDate);
+                    break;
+                case "saledate_asc":
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.SaleDate);
                     break;
                 default:
                     realEstateObjects = realEstateObjects.OrderBy(r => r.AgentID);

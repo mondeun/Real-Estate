@@ -33,13 +33,13 @@
 			@Html.ActionLink("Square Meters", "Index", new { sortOrder = ViewBag.SqmSortParam })
 		</th>
 		<th>
-			@Html.DisplayNameFor(model => model.Address)
+			@Html.ActionLink("Address", "Index", new {  sortOrder = ViewBag.AddressSortParam })
 		</th>
 		<th>
-			@Html.DisplayNameFor(model => model.DateOnMarket)
+			@Html.ActionLink("Date On Market", "Index", new {  sortOrder = ViewBag.DateOnMarketSortParam })
 		</th>
 		<th>
-			@Html.DisplayNameFor(model => model.SaleDate)
+			@Html.ActionLink("Sale Date", "Index", new { sortOrder = ViewBag.SaleDateSortParam })
 		</th>
 		<th></th>
 	</tr>
