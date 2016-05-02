@@ -22,6 +22,9 @@ namespace Real_Estate.Controllers
             ViewBag.CitySortParam = sortOrder == "city_asc" ? "city_desc" : "city_asc";
             ViewBag.CustomerSortParam = sortOrder == "customer_asc" ? "customer_desc" : "customer_asc";
             ViewBag.ZipCodeSortParam = sortOrder == "zipcode_asc" ? "zipcode_desc" : "zipcode_asc";
+            ViewBag.ContractSortParam = sortOrder == "contract_asc" ? "contract_desc" : "contract_asc";
+            ViewBag.EstateSortParam = sortOrder == "estate_asc" ? "estate_desc" : "estate_asc";
+            ViewBag.SqmSortParam = sortOrder == "sqm_asc" ? "sqm_desc" : "sqm_asc";
             var realEstateObjects = db.RealEstateObjects.Include(r => r.Agent).Include(r => r.City).Include(r => r.Customer).Include(r => r.ZipCode);
 
             switch (sortOrder)
@@ -46,6 +49,24 @@ namespace Real_Estate.Controllers
                     break;
                 case "zipcode_asc":
                     realEstateObjects = realEstateObjects.OrderBy(r => r.ZipCodeID);
+                    break;
+                case "contract_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.Contract);
+                    break;
+                case "contract_asc":
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.Contract);
+                    break;
+                case "estate_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.EstateType);
+                    break;
+                case "estate_asc":
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.EstateType);
+                    break;
+                case "sqm_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.Sqm);
+                    break;
+                case "sqm_asc":
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.Sqm);
                     break;
                 default:
                     realEstateObjects = realEstateObjects.OrderBy(r => r.AgentID);
