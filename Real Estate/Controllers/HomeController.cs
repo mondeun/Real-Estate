@@ -26,5 +26,12 @@ namespace Real_Estate.Controllers
 
             return View();
         }
+
+        public ActionResult Search()
+        {
+            ViewBag.Message = "Search";
+
+            return View();
+        }
     }
 }
