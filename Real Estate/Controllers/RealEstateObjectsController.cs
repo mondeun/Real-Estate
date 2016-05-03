@@ -16,9 +16,85 @@ namespace Real_Estate.Controllers
         private RealEstateContext db = new RealEstateContext();
 
         // GET: RealEstateObjects
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
+            ViewBag.AgentSortParam = String.IsNullOrEmpty(sortOrder) ? "agent_desc" : "";
+            ViewBag.CitySortParam = sortOrder == "city_asc" ? "city_desc" : "city_asc";
+            ViewBag.CustomerSortParam = sortOrder == "customer_asc" ? "customer_desc" : "customer_asc";
+            ViewBag.ZipCodeSortParam = sortOrder == "zipcode_asc" ? "zipcode_desc" : "zipcode_asc";
+            ViewBag.ContractSortParam = sortOrder == "contract_asc" ? "contract_desc" : "contract_asc";
+            ViewBag.EstateSortParam = sortOrder == "estate_asc" ? "estate_desc" : "estate_asc";
+            ViewBag.SqmSortParam = sortOrder == "sqm_asc" ? "sqm_desc" : "sqm_asc";
+            ViewBag.AddressSortParam = sortOrder == "addr_asc" ? "addr_desc" : "addr_asc";
+            ViewBag.DateOnMarketSortParam = sortOrder == "datemarket_asc" ? "datemarket_desc" : "datemarket_asc";
+            ViewBag.SaleDateSortParam = sortOrder == "saledate_asc" ? "saledate_desc" : "saledate_asc";
+
             var realEstateObjects = db.RealEstateObjects.Include(r => r.Agent).Include(r => r.City).Include(r => r.Customer).Include(r => r.ZipCode);
+
+            switch (sortOrder)
+            {
+                case "agent_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.AgentID);
+                    break;
+                case "city_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.CityID);
+                    break;
+                case "city_asc":
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.CityID);
+                    break;
+                case "customer_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.CustomerID);
+                    break;
+                case "customer_asc":
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.CustomerID);
+                    break;
+                case "zipcode_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.ZipCodeID);
+                    break;
+                case "zipcode_asc":
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.ZipCodeID);
+                    break;
+                case "contract_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.Contract);
+                    break;
+                case "contract_asc":
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.Contract);
+                    break;
+                case "estate_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.EstateType);
+                    break;
+                case "estate_asc":
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.EstateType);
+                    break;
+                case "sqm_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.Sqm);
+                    break;
+                case "sqm_asc":
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.Sqm);
+                    break;
+                case "addr_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.Address);
+                    break;
+                case "addr_asc":
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.Address);
+                    break;
+                case "datemarket_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.DateOnMarket);
+                    break;
+                case "datemarket_asc":
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.DateOnMarket);
+                    break;
+                case "saledate_desc":
+                    realEstateObjects = realEstateObjects.OrderByDescending(r => r.SaleDate);
+                    break;
+                case "saledate_asc":
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.SaleDate);
+                    break;
+                default:
+                    realEstateObjects = realEstateObjects.OrderBy(r => r.AgentID);
+                    break;
+            }
+
             return View(realEstateObjects.ToList());
         }
 

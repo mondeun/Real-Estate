@@ -1,87 +1,87 @@
 ﻿@model IEnumerable<Real_Estate.Models.RealEstateObject>
 
 @{
-    ViewBag.Title = "Index";
+	ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+	@Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Agent)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.City)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Customer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ZipCode)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Contract)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EstateType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sqm)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateOnMarket)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SaleDate)
-        </th>
-        <th></th>
-    </tr>
+	<tr>
+		<th>
+			@Html.ActionLink("Agent", "Index", new { sortOrder = ViewBag.AgentSortParam })
+		</th>
+		<th>
+			@Html.ActionLink("City", "Index", new { sortOrder = ViewBag.CitySortParam })
+		</th>
+		<th>
+			@Html.ActionLink("Seller", "Index", new { sortOrder = ViewBag.CustomerSortParam })
+		</th>
+		<th>
+			@Html.ActionLink("Zip Code", "Index", new { sortOrder = ViewBag.ZipCodeSortParam })
+		</th>
+		<th>
+			@Html.ActionLink("Contract", "Index", new { sortOrder = ViewBag.ContractSortParam })
+		</th>
+		<th>
+			@Html.ActionLink("Estate Type", "Index", new { sortOrder = ViewBag.EstateSortParam })
+		</th>
+		<th>
+			@Html.ActionLink("Square Meters", "Index", new { sortOrder = ViewBag.SqmSortParam })
+		</th>
+		<th>
+			@Html.ActionLink("Address", "Index", new {  sortOrder = ViewBag.AddressSortParam })
+		</th>
+		<th>
+			@Html.ActionLink("Date On Market", "Index", new {  sortOrder = ViewBag.DateOnMarketSortParam })
+		</th>
+		<th>
+			@Html.ActionLink("Sale Date", "Index", new { sortOrder = ViewBag.SaleDateSortParam })
+		</th>
+		<th></th>
+	</tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Agent.FullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.City.CityName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Customer.FullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ZipCode.ZipCodes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Contract)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EstateType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sqm)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateOnMarket)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SaleDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RealEstateObjectID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RealEstateObjectID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RealEstateObjectID })
-        </td>
-    </tr>
+	<tr>
+		<td>
+			@Html.DisplayFor(modelItem => item.Agent.FullName)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.City.CityName)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Customer.FullName)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.ZipCode.ZipCodes)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Contract)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.EstateType)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Sqm)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Address)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.DateOnMarket)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.SaleDate)
+		</td>
+		<td>
+			@Html.ActionLink("Edit", "Edit", new { id=item.RealEstateObjectID }) |
+			@Html.ActionLink("Details", "Details", new { id=item.RealEstateObjectID }) |
+			@Html.ActionLink("Delete", "Delete", new { id=item.RealEstateObjectID })
+		</td>
+	</tr>
 }
 
 </table>
