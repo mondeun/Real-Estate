@@ -29,6 +29,7 @@ namespace Real_Estate.Models
         public string LastName { get; set; }
 
         [Required(ErrorMessage = "Personal number is required")]
+        [StringLength(10, ErrorMessage = "Enter persaonal number as YYMMDDXXXX", MinimumLength = 10)]
         public string Pnr { get; set; }
 
         [Required(ErrorMessage = "Address is required")]
