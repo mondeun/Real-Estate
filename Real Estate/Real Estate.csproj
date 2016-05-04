@@ -168,6 +168,12 @@
     <Content Include="Web_Forms\Form11.aspx" />
     <Content Include="Web_Forms\Form12.aspx" />
     <Content Include="Web_Forms\Form13.aspx" />
+    <Content Include="Web_Forms\Form14.aspx" />
+    <Content Include="Web_Forms\Form15.aspx" />
+    <Content Include="Web_Forms\Form16.aspx" />
+    <Content Include="Web_Forms\Form17.aspx" />
+    <Content Include="Web_Forms\Form18.aspx" />
+    <Content Include="Web_Forms\Form19.aspx" />
     <Content Include="Web_Forms\Form2.aspx" />
     <Content Include="Web_Forms\Form3.aspx" />
     <Content Include="Web_Forms\Form4.aspx" />
