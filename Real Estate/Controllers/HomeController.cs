@@ -33,5 +33,12 @@ namespace Real_Estate.Controllers
 
             return View();
         }
+
+        public ActionResult Presentation()
+        {
+            ViewBag.Message = "Presentation";
+
+            return View();
+        }
     }
 }
