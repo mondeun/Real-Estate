@@ -165,6 +165,9 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Web_Forms\Form10.aspx" />
+    <Content Include="Web_Forms\Form11.aspx" />
+    <Content Include="Web_Forms\Form12.aspx" />
+    <Content Include="Web_Forms\Form13.aspx" />
     <Content Include="Web_Forms\Form2.aspx" />
     <Content Include="Web_Forms\Form3.aspx" />
     <Content Include="Web_Forms\Form4.aspx" />
