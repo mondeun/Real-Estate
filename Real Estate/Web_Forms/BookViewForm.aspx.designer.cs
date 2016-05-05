@@ -22,6 +22,15 @@ namespace Real_Estate.Web_Forms {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// ViewLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ViewLabel;
+        
+        /// <summary>
         /// ddlView control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace Real_Estate.Web_Forms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlView;
+        
+        /// <summary>
+        /// CustLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CustLabel;
         
         /// <summary>
         /// ddlCust control.

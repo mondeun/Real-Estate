@@ -38,6 +38,7 @@ namespace Real_Estate.Web_Forms
                     {
                         Output.Text = "The booking failed";
                     }
+                    GridView1.DataBind();
                 }
             }
         }
