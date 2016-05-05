@@ -58,6 +58,24 @@ namespace Real_Estate.Web_Forms {
         protected global::System.Web.UI.WebControls.Label Output;
         
         /// <summary>
+        /// GridView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView1;
+        
+        /// <summary>
+        /// BookedViewings control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource BookedViewings;
+        
+        /// <summary>
         /// Viewings control.
         /// </summary>
         /// <remarks>
