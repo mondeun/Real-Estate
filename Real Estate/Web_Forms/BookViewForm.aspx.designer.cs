@@ -10,7 +10,7 @@
 namespace Real_Estate.Web_Forms {
     
     
-    public partial class Test {
+    public partial class BookView {
         
         /// <summary>
         /// form1 control.

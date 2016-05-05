@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace Real_Estate.Web_Forms
 {
-    public partial class Test : System.Web.UI.Page
+    public partial class BookView : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,14 +21,23 @@ namespace Real_Estate.Web_Forms
             var view = ddlView.SelectedValue;
             var cust = ddlCust.SelectedValue;
 
+
             string sqlQuery = $"EXEC BookViewing {view}, {cust}";
             using (SqlConnection dataConnection = new SqlConnection("Data Source =.; Initial Catalog = RealEstateSystemDB; Integrated Security = true"))
             {
                 using (SqlCommand dataCommand = new SqlCommand(sqlQuery, dataConnection))
                 {
                     dataConnection.Open();
-                    dataCommand.ExecuteNonQuery();
+                    var result = dataCommand.ExecuteNonQuery();
                     dataConnection.Close();
+                    if (result == 1)
+                    {
+                        Output.Text = "The booking was successful.";
+                    }
+                    else
+                    {
+                        Output.Text = "The booking failed";
+                    }
                 }
             }
         }
