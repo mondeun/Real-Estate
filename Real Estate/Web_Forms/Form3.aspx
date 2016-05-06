@@ -47,8 +47,6 @@
         <asp:SqlDataSource ID="realEstateDB" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="ViewingForACertainCity" SelectCommandType="StoredProcedure">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList1" Name="city" PropertyName="SelectedValue" Type="String" />
-                <asp:ControlParameter ControlID="DropDownList2" Name="zipCode" PropertyName="SelectedValue" Type="Int32" />
-                <asp:ControlParameter ControlID="Calendar1" Name="viewingDate" PropertyName="SelectedDate" Type="DateTime" />
             </SelectParameters>
         </asp:SqlDataSource>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="SELECT * FROM [City]"></asp:SqlDataSource>

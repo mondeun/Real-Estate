@@ -51,7 +51,7 @@
         </asp:SqlDataSource>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="SELECT [FirstName] FROM [Person] WHERE ([Discriminator] = @Discriminator)">
             <SelectParameters>
-                <asp:Parameter DefaultValue="Agent" Name="Discriminator" Type="String" />
+                <asp:Parameter DefaultValue="Customer" Name="Discriminator" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
         Seller

@@ -32,11 +32,11 @@
         <h3 class="h3">Visa antalet säljare från ett visst område.</h3>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="realEstateDB" CssClass="table table-hover table-striped">
             <Columns>
-                <asp:BoundField DataField="Number of Agents" HeaderText="Number of Agents" SortExpression="Number of Agents" ReadOnly="True" />
+                <asp:BoundField DataField="Number of Customers" HeaderText="Number of Customers" SortExpression="Number of Customers" ReadOnly="True" />
                 <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="realEstateDB" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="spSailCity" SelectCommandType="StoredProcedure">
+        <asp:SqlDataSource ID="realEstateDB" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="NumberOfSellersInCity" SelectCommandType="StoredProcedure">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList1" Name="City" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
