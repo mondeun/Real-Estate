@@ -161,6 +161,7 @@
     <Content Include="Images\beginning.jpg" />
     <Content Include="Images\ERdiagram.png" />
     <Content Include="Images\kontrakt.png" />
+    <Content Include="Images\MindMap.png" />
     <Content Include="Images\thinkingB.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -242,6 +243,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\App_LocalResources\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
