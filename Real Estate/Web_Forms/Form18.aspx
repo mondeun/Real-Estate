@@ -32,18 +32,20 @@
         <h3 class="h3">Snitt priset på sålda fastigheter på ett visst område.</h3>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="realEstateDB" CssClass="table table-hover table-striped">
             <Columns>
-                <asp:BoundField DataField="CityName" HeaderText="CityName" SortExpression="CityName" />
-                <asp:BoundField DataField="ZipCodes" HeaderText="ZipCodes" SortExpression="ZipCodes" />
+                <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
+                <asp:BoundField DataField="Zipcode" HeaderText="Zipcode" SortExpression="Zipcode" />
                 <asp:BoundField DataField="Average Price" HeaderText="Average Price" SortExpression="Average Price" ReadOnly="True" />
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="realEstateDB" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="usp_AveragePriceForSoldObjectsInArea" SelectCommandType="StoredProcedure">
             <SelectParameters>
-                <asp:ControlParameter ControlID="TextBox1" Name="CityName" PropertyName="Text" Type="String" />
+                <asp:ControlParameter ControlID="DropDownList1" Name="CityName" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="SELECT [CityName] FROM [City]"></asp:SqlDataSource>
         City
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="CityName" DataValueField="CityName">
+        </asp:DropDownList>
     </div>
     <div class=" divider nav-divider">
         <hr />

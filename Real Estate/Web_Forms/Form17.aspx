@@ -33,16 +33,19 @@
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="realEstateDB" CssClass="table table-hover table-striped">
             <Columns>
                 <asp:BoundField DataField="Listing ID" HeaderText="Listing ID" SortExpression="Listing ID" />
-                <asp:BoundField DataField="Number of Customers" HeaderText="Number of Customers" SortExpression="Number of Customers" ReadOnly="True" />
+                <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
+                <asp:BoundField DataField="Number of Customers" HeaderText="Number of Customers" ReadOnly="True" SortExpression="Number of Customers" />
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="realEstateDB" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="usp_ShowCustomersForViewing" SelectCommandType="StoredProcedure">
             <SelectParameters>
-                <asp:ControlParameter ControlID="TextBox1" Name="ViewID" PropertyName="Text" Type="Int32" />
+                <asp:ControlParameter ControlID="DropDownList1" Name="ViewID" PropertyName="SelectedValue" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="SELECT [ViewingID] FROM [Viewing]"></asp:SqlDataSource>
         Viewing ID
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="ViewingID" DataValueField="ViewingID">
+        </asp:DropDownList>
     </div>
     <div class=" divider nav-divider">
         <hr />

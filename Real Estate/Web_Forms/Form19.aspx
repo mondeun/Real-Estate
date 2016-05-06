@@ -33,7 +33,7 @@
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="realEstateDB" CssClass="table table-hover table-striped">
             <Columns>
                 <asp:BoundField DataField="Number of sold objects" HeaderText="Number of sold objects" SortExpression="Number of sold objects" ReadOnly="True" />
-                <asp:BoundField DataField="OfficeName" HeaderText="OfficeName" SortExpression="OfficeName" />
+                <asp:BoundField DataField="Office" HeaderText="Office" SortExpression="Office" />
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="realEstateDB" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="GetAgentsSaleStatisticsForPeriod" SelectCommandType="StoredProcedure">
