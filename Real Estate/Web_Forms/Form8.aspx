@@ -29,11 +29,10 @@
 <br/>
 
     <div class="container body-content">
-        <h3 class="h3">Lista alla objekt från alla ObjektSäljare var för sig.</h3>
+        <h3 class="h3">Lista alla objekt från alla Objektsäljare var för sig.</h3>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="realEstateDB" CssClass="table table-hover table-striped">
             <Columns>
-                <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
-                <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
+                <asp:BoundField DataField="Customer full name" HeaderText="Customer full name" SortExpression="Customer full name" ReadOnly="True" />
                 <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
                 <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
             </Columns>
