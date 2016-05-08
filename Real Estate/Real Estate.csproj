@@ -191,6 +191,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\beginning.jpg" />
+    <Content Include="Images\chabolas.jpg" />
     <Content Include="Images\ERdiagram.png" />
     <Content Include="Images\kontrakt.png" />
     <Content Include="Images\MindMap.png" />

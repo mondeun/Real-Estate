@@ -15,7 +15,7 @@ namespace Real_Estate.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Real Estate Systems";
 
             return View();
         }
