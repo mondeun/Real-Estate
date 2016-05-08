@@ -193,8 +193,11 @@
     <Content Include="Images\beginning.jpg" />
     <Content Include="Images\chabolas.jpg" />
     <Content Include="Images\ERdiagram.png" />
+    <Content Include="Images\Kennetho.jpg" />
     <Content Include="Images\kontrakt.png" />
+    <Content Include="Images\Krista.jpg" />
     <Content Include="Images\MindMap.png" />
+    <Content Include="Images\Robino.jpg" />
     <Content Include="Images\thinkingB.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
