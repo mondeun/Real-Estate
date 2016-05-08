@@ -22,7 +22,7 @@ namespace Real_Estate.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Contact the profs";
+            ViewBag.Message = "Contact the pros";
 
             return View();
         }
