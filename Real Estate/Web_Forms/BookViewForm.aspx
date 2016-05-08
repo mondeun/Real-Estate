@@ -35,7 +35,7 @@
             <br />
             <asp:Label ID="Output" runat="server"></asp:Label>
 
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="BookedViewings">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="BookedViewings" AllowSorting="True">
                 <Columns>
                     <asp:BoundField DataField="Viewing" HeaderText="Viewing" ReadOnly="True" SortExpression="Viewing" />
                     <asp:BoundField DataField="Customer" HeaderText="Customer" ReadOnly="True" SortExpression="Customer" />

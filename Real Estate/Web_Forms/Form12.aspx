@@ -46,16 +46,13 @@
         </asp:GridView>
         <asp:SqlDataSource ID="realEstateDB" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="ListObjectsByAgents" SelectCommandType="StoredProcedure">
             <SelectParameters>
-                <asp:ControlParameter ControlID="DropDownList1" Name="agent" PropertyName="SelectedValue" Type="Int32" />
+                <asp:ControlParameter ControlID="DropDownList1" Name="agent" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="SELECT [FirstName] FROM [Person] WHERE ([Discriminator] = @Discriminator)">
-            <SelectParameters>
-                <asp:Parameter DefaultValue="Agent" Name="Discriminator" Type="String" />
-            </SelectParameters>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="SELECT [FirstName],  [FirstName] + ' ' + [LastName] AS Name FROM [Person] WHERE ([Discriminator] = 'Agent')">
         </asp:SqlDataSource>
         Agent
-        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="FirstName" DataValueField="FirstName">
+        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="FirstName">
         </asp:DropDownList>
     </div>
     <div class=" divider nav-divider">
