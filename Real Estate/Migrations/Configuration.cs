@@ -239,8 +239,8 @@ namespace Real_Estate.Migrations
                     ViewingID = 5,
                     RealEstateObjectID = 3,
                     AgentID = 2,
-                    ViewingStart = new DateTime(2015, 12, 05, 15, 30, 0),
-                    ViewingStop = new DateTime(2015, 12, 05, 18, 0, 0),
+                    ViewingStart = new DateTime(2016, 01, 05, 15, 30, 0),
+                    ViewingStop = new DateTime(2016, 01, 05, 18, 0, 0),
                     MaximumNoCustomerPerViewing = 10
                 },
                 new Viewing
@@ -248,8 +248,8 @@ namespace Real_Estate.Migrations
                     ViewingID = 6,
                     RealEstateObjectID = 3,
                     AgentID = 2,
-                    ViewingStart = new DateTime(2015, 12, 05, 13, 0, 0),
-                    ViewingStop = new DateTime(2015, 12, 05, 15, 0, 0),
+                    ViewingStart = new DateTime(2016, 01, 05, 13, 0, 0),
+                    ViewingStop = new DateTime(2016, 01, 05, 15, 0, 0),
                     MaximumNoCustomerPerViewing = 10
                 }
                 );
