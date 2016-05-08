@@ -42,9 +42,11 @@
                 <asp:ControlParameter ControlID="DropDownList1" Name="ViewID" PropertyName="SelectedValue" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="SELECT [ViewingID] FROM [Viewing]"></asp:SqlDataSource>
-        Viewing ID
-        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="ViewingID" DataValueField="ViewingID">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="SELECT v.[ViewingID], (reo.[Address] + ' | ' + CONVERT(VARCHAR,v.ViewingStart, 121)) AS Viewing FROM [Viewing] AS v
+INNER JOIN RealEstateObject AS reo ON v.RealEstateObjectID = reo.RealEstateObjectID
+"></asp:SqlDataSource>
+        Viewing
+        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Viewing" DataValueField="ViewingID">
         </asp:DropDownList>
     </div>
     <div class=" divider nav-divider">
