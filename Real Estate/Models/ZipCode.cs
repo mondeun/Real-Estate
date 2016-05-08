@@ -13,6 +13,7 @@ namespace Real_Estate.Models
         public virtual ICollection<Person> People { get; set; } 
         public virtual ICollection<Office> Offices { get; set; }
 
+        [StringLength(50)]
         [Required(ErrorMessage = "Zip code is required")]
         public string ZipCodes { get; set; }
 

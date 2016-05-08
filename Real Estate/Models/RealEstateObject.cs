@@ -45,6 +45,7 @@ namespace Real_Estate.Models
         public int Sqm { get; set; }
 
         [Required(ErrorMessage = "Address is required")]
+        [StringLength(100)]
         public string Address { get; set; }
 
         public int CityID { get; set; }
@@ -59,7 +60,7 @@ namespace Real_Estate.Models
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime? SaleDate { get; set; } //Allow nullable? Check this one
+        public DateTime? SaleDate { get; set; }
 
         public virtual ICollection<Viewing> Viewings { get; set; }
     }
