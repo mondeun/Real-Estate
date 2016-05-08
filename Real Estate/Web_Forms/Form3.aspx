@@ -41,7 +41,7 @@
                 <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
                 <asp:BoundField DataField="Zip code" HeaderText="Zip code" SortExpression="Zip code" />
                 <asp:BoundField DataField="Date on Market" HeaderText="Date on Market" SortExpression="Date on Market" />
-                <asp:BoundField DataField="Sale Date" HeaderText="Sale Date" SortExpression="Sale Date" />
+                <asp:BoundField DataField="View Date" HeaderText="View Date" SortExpression="View Date" />
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="realEstateDB" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="ViewingForACertainCity" SelectCommandType="StoredProcedure">
