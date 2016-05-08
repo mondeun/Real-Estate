@@ -41,7 +41,6 @@
                 <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
                 <asp:BoundField DataField="Zip code" HeaderText="Zip code" SortExpression="Zip code" />
                 <asp:BoundField DataField="Date on Market" HeaderText="Date on Market" SortExpression="Date on Market" />
-                <asp:BoundField DataField="Sale Date" HeaderText="Sale Date" SortExpression="Sale Date" />
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="realEstateDB" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="ListObjectsByAgents" SelectCommandType="StoredProcedure">
