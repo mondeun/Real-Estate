@@ -30,6 +30,11 @@ textarea {
     
 }
 
+.carousel-inner {
+    width:50%;
+    margin:auto;
+}
+
 .myCarousel {
        
 }
