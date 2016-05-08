@@ -30,25 +30,14 @@
 
     <div class="container body-content">
         <h3 class="h3">Lista alla objekt som har visning på ett visst datum.</h3>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="realEstateDB" CssClass="table table-hover table-striped" DataKeyNames="ViewingID,RealEstateObjectID1">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="realEstateDB" CssClass="table table-hover table-striped">
             <Columns>
-                <asp:BoundField DataField="ViewingID" HeaderText="ViewingID" SortExpression="ViewingID" InsertVisible="False" ReadOnly="True" />
-                <asp:BoundField DataField="ViewingStart" HeaderText="ViewingStart" SortExpression="ViewingStart" />
-                <asp:BoundField DataField="ViewingStop" HeaderText="ViewingStop" SortExpression="ViewingStop" />
-                <asp:BoundField DataField="AgentID" HeaderText="AgentID" SortExpression="AgentID" />
-                <asp:BoundField DataField="RealEstateObjectID" HeaderText="RealEstateObjectID" SortExpression="RealEstateObjectID" />
-                <asp:BoundField DataField="MaximumNoCustomerPerViewing" HeaderText="MaximumNoCustomerPerViewing" SortExpression="MaximumNoCustomerPerViewing" />
-                <asp:BoundField DataField="RealEstateObjectID1" HeaderText="RealEstateObjectID1" InsertVisible="False" ReadOnly="True" SortExpression="RealEstateObjectID1" />
                 <asp:BoundField DataField="Contract" HeaderText="Contract" SortExpression="Contract" />
-                <asp:BoundField DataField="EstateType" HeaderText="EstateType" SortExpression="EstateType" />
-                <asp:BoundField DataField="sqm" HeaderText="sqm" SortExpression="sqm" />
+                <asp:BoundField DataField="Estate type" HeaderText="Estate type" SortExpression="Estate type" />
                 <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
-                <asp:BoundField DataField="DateOnMarket" HeaderText="DateOnMarket" SortExpression="DateOnMarket" />
-                <asp:BoundField DataField="SaleDate" HeaderText="SaleDate" SortExpression="SaleDate" />
-                <asp:BoundField DataField="AgentID1" HeaderText="AgentID1" SortExpression="AgentID1" />
-                <asp:BoundField DataField="CityID" HeaderText="CityID" SortExpression="CityID" />
-                <asp:BoundField DataField="ZipCodeID" HeaderText="ZipCodeID" SortExpression="ZipCodeID" />
-                <asp:BoundField DataField="CustomerID" HeaderText="CustomerID" SortExpression="CustomerID" />
+                <asp:BoundField DataField="Agent full name" HeaderText="Agent full name" SortExpression="Agent full name" ReadOnly="True" />
+                <asp:BoundField DataField="Viewing start" HeaderText="Viewing start" SortExpression="Viewing start" />
+                <asp:BoundField DataField="Viewing stop" HeaderText="Viewing stop" SortExpression="Viewing stop" />
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="realEstateDB" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="ViewingOnCertainDate" SelectCommandType="StoredProcedure">

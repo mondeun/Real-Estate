@@ -193,11 +193,11 @@
     <Content Include="Images\beginning.jpg" />
     <Content Include="Images\ERdiagram.png" />
     <Content Include="Images\kontrakt.png" />
+    <Content Include="Images\MindMap.png" />
     <Content Include="Images\thinkingB.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Web_Forms\Form10.aspx" />
-    <Content Include="Web_Forms\Form11.aspx" />
     <Content Include="Web_Forms\Form12.aspx" />
     <Content Include="Web_Forms\Form13.aspx" />
     <Content Include="Web_Forms\Form14.aspx" />
@@ -284,6 +284,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\App_LocalResources\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

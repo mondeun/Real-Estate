@@ -32,8 +32,8 @@
         <h3 class="h3">Visa hur mycket företaget tjänade under en viss tidsperiod.</h3>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="realEstateDB" CssClass="table table-hover table-striped">
             <Columns>
-                <asp:BoundField DataField="EstateType" HeaderText="EstateType" SortExpression="EstateType" />
-                <asp:BoundField DataField="Benefits" HeaderText="Benefits" SortExpression="Benefits" ReadOnly="True" />
+                <asp:BoundField DataField="Estate type" HeaderText="Estate type" SortExpression="Estate type" />
+                <asp:BoundField DataField="Profits" HeaderText="Profits" SortExpression="Profits" ReadOnly="True" />
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="realEstateDB" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="spBenefitsYear" SelectCommandType="StoredProcedure">

@@ -102,6 +102,7 @@ namespace Real_Estate.Migrations
                     CityID = 5,
                     Email = "steffe.karlsson@hotmail.com"
                 },
+
                 new Customer
                 {
                     PersonID = 6,
@@ -112,7 +113,30 @@ namespace Real_Estate.Migrations
                     ZipCodeID = 3,
                     CityID = 4,
                     Email = "larsson1977@gmail.com"
-                });
+                },
+                new Customer
+                {
+                    PersonID = 7,
+                    FirstName = "Sven",
+                    LastName = "Karlsson",
+                    Pnr = "8203159642",
+                    Address = "Pickolagränd 3",
+                    ZipCodeID = 1,
+                    CityID = 1,
+                    Email = "larsson1977@gmail.com"
+                },
+                new Customer
+                {
+                    PersonID = 8,
+                    FirstName = "Erik",
+                    LastName = "Nordfeldt",
+                    Pnr = "8910159222",
+                    Address = "Storgatan 33B",
+                    ZipCodeID = 4,
+                    CityID = 4,
+                    Email = "larsson1977@gmail.com"
+                }
+                );
 
             context.RealEstateObjects.AddOrUpdate(x => x.RealEstateObjectID,
                 new RealEstateObject
@@ -156,7 +180,22 @@ namespace Real_Estate.Migrations
                     CityID = 6,
                     DateOnMarket = new DateTime(2015, 11, 27),
                     SaleDate = null
-                });
+                },
+                new RealEstateObject
+                {
+                    RealEstateObjectID = 4,
+                    Contract = ContractType.Residential,
+                    EstateType = EstateType.House,
+                    AgentID = 2,
+                    CustomerID = 8,
+                    Sqm = 22,
+                    Address = "Södergatan 81",
+                    ZipCodeID = 5,
+                    CityID = 4,
+                    DateOnMarket = new DateTime(2015, 05, 12),
+                    SaleDate = new DateTime(2016, 02, 25)
+                }
+                );
 
             context.Viewings.AddOrUpdate(x => x.ViewingID,
                 new Viewing
@@ -171,12 +210,49 @@ namespace Real_Estate.Migrations
                 new Viewing
                 {
                     ViewingID = 2,
-                    RealEstateObjectID = 3,
+                    RealEstateObjectID = 1,
                     AgentID = 1,
-                    ViewingStart = new DateTime(2015, 12, 05, 15, 30, 0),
-                    ViewingStop = new DateTime(2015, 12, 05, 18, 0, 0),
+                    ViewingStart = new DateTime(2016, 4, 22, 16, 0, 0),
+                    ViewingStop = new DateTime(2016, 4, 22, 18, 0, 0),
+                    MaximumNoCustomerPerViewing = 5
+                },
+                new Viewing
+                {
+                    ViewingID = 3,
+                    RealEstateObjectID = 1,
+                    AgentID = 1,
+                    ViewingStart = new DateTime(2016, 5, 22, 13, 0, 0),
+                    ViewingStop = new DateTime(2016, 5, 22, 16, 0, 0),
+                    MaximumNoCustomerPerViewing = 5
+                },
+                new Viewing
+                {
+                    ViewingID = 4,
+                    RealEstateObjectID = 1,
+                    AgentID = 1,
+                    ViewingStart = new DateTime(2016, 5, 22, 16, 0, 0),
+                    ViewingStop = new DateTime(2016, 5, 22, 18, 0, 0),
+                    MaximumNoCustomerPerViewing = 5
+                },
+                new Viewing
+                {
+                    ViewingID = 5,
+                    RealEstateObjectID = 3,
+                    AgentID = 2,
+                    ViewingStart = new DateTime(2016, 01, 05, 15, 30, 0),
+                    ViewingStop = new DateTime(2016, 01, 05, 18, 0, 0),
                     MaximumNoCustomerPerViewing = 10
-                });
+                },
+                new Viewing
+                {
+                    ViewingID = 6,
+                    RealEstateObjectID = 3,
+                    AgentID = 2,
+                    ViewingStart = new DateTime(2016, 01, 05, 13, 0, 0),
+                    ViewingStop = new DateTime(2016, 01, 05, 15, 0, 0),
+                    MaximumNoCustomerPerViewing = 10
+                }
+                );
         }
     }
 }

@@ -33,17 +33,22 @@
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="realEstateDB" CssClass="table table-hover table-striped">
             <Columns>
                 <asp:BoundField DataField="Customer" HeaderText="Customer" SortExpression="Customer" />
-                <asp:BoundField DataField="CustomerID" HeaderText="CustomerID" SortExpression="CustomerID" />
-                <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
+                <asp:BoundField DataField="Agent" HeaderText="Agent" SortExpression="Agent" />
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="realEstateDB" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="ListCustomersAgent" SelectCommandType="StoredProcedure">
             <SelectParameters>
-                <asp:ControlParameter ControlID="TextBox1" Name="Agent" PropertyName="Text" Type="String" />
+                <asp:ControlParameter ControlID="DropDownList1" Name="Agent" PropertyName="SelectedValue" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="SELECT [FirstName] FROM [Person] WHERE ([Discriminator] = @Discriminator)">
+            <SelectParameters>
+                <asp:Parameter DefaultValue="Agent" Name="Discriminator" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
         Agent&nbsp;
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="FirstName" DataValueField="FirstName">
+        </asp:DropDownList>
     </div>
     <div class=" divider nav-divider">
         <hr />

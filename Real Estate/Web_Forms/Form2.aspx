@@ -38,16 +38,18 @@
                 <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
                 <asp:BoundField DataField="DateOnMarket" HeaderText="DateOnMarket" SortExpression="DateOnMarket" />
                 <asp:BoundField DataField="SaleDate" HeaderText="SaleDate" SortExpression="SaleDate" />
-                <asp:BoundField DataField="ZipCodeID" HeaderText="ZipCodeID" SortExpression="ZipCodeID" />
+                <asp:BoundField DataField="Zipcode" HeaderText="Zipcode" SortExpression="Zipcode" />
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="realEstateDB" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="ListSoldItemsInArea" SelectCommandType="StoredProcedure">
             <SelectParameters>
-                <asp:ControlParameter ControlID="TextBox1" Name="ZipID" PropertyName="Text" Type="Int32" />
+                <asp:ControlParameter ControlID="DropDownList1" Name="ZipID" PropertyName="SelectedValue" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="SELECT [ZipCodeID], [ZipCodes] FROM [ZipCode]"></asp:SqlDataSource>
         Zip Code 
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="ZipCodes" DataValueField="ZipCodeID">
+        </asp:DropDownList>
     </div>
     <div class=" divider nav-divider">
         <hr />

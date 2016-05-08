@@ -32,10 +32,9 @@
         <h3 class="h3">Lista kontaktinformation (kontorets adress, mäklarens email, adress) om diverse mäklare/städer.</h3>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="realEstateDB" CssClass="table table-hover table-striped">
             <Columns>
-                <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
-                <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
+                <asp:BoundField DataField="Agent full name" HeaderText="Agent full name" SortExpression="Agent full name" ReadOnly="True" />
                 <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
-                <asp:BoundField DataField="OfficeName" HeaderText="OfficeName" SortExpression="OfficeName" />
+                <asp:BoundField DataField="Office" HeaderText="Office" SortExpression="Office" />
                 <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
             </Columns>
         </asp:GridView>

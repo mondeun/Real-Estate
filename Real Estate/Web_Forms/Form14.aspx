@@ -30,22 +30,19 @@
 
     <div class="container body-content">
         <h3 class="h3">Lista alla objekt över ett visst pris.</h3>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="realEstateDB" CssClass="table table-hover table-striped" DataKeyNames="RealEstateObjectID,ZipCodeID1">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="realEstateDB" CssClass="table table-hover table-striped">
             <Columns>
-                <asp:BoundField DataField="RealEstateObjectID" HeaderText="RealEstateObjectID" SortExpression="RealEstateObjectID" InsertVisible="False" ReadOnly="True" />
                 <asp:BoundField DataField="Contract" HeaderText="Contract" SortExpression="Contract" />
-                <asp:BoundField DataField="EstateType" HeaderText="EstateType" SortExpression="EstateType" />
-                <asp:BoundField DataField="sqm" HeaderText="sqm" SortExpression="sqm" />
+                <asp:BoundField DataField="Estate type" HeaderText="Estate type" SortExpression="Estate type" />
+                <asp:BoundField DataField="Agent full name" HeaderText="Agent full name" SortExpression="Agent full name" ReadOnly="True" />
+                <asp:BoundField DataField="Customer full name" HeaderText="Customer full name" SortExpression="Customer full name" ReadOnly="True" />
+                <asp:BoundField DataField="Square meters" HeaderText="Square meters" SortExpression="Square meters" />
                 <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
-                <asp:BoundField DataField="DateOnMarket" HeaderText="DateOnMarket" SortExpression="DateOnMarket" />
-                <asp:BoundField DataField="SaleDate" HeaderText="SaleDate" SortExpression="SaleDate" />
-                <asp:BoundField DataField="AgentID" HeaderText="AgentID" SortExpression="AgentID" />
-                <asp:BoundField DataField="CityID" HeaderText="CityID" SortExpression="CityID" />
-                <asp:BoundField DataField="ZipCodeID" HeaderText="ZipCodeID" SortExpression="ZipCodeID" />
-                <asp:BoundField DataField="CustomerID" HeaderText="CustomerID" SortExpression="CustomerID" />
-                <asp:BoundField DataField="ZipCodeID1" HeaderText="ZipCodeID1" InsertVisible="False" ReadOnly="True" SortExpression="ZipCodeID1" />
-                <asp:BoundField DataField="ZipCodes" HeaderText="ZipCodes" SortExpression="ZipCodes" />
-                <asp:BoundField DataField="PricePerSqm" HeaderText="PricePerSqm" SortExpression="PricePerSqm" />
+                <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
+                <asp:BoundField DataField="Zip code" HeaderText="Zip code" SortExpression="Zip code" />
+                <asp:BoundField DataField="Date on Market" HeaderText="Date on Market" SortExpression="Date on Market" />
+                <asp:BoundField DataField="Sale Date" HeaderText="Sale Date" SortExpression="Sale Date" />
+                <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" ReadOnly="True" />
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="realEstateDB" runat="server" ConnectionString="<%$ ConnectionStrings:RealEstateContext %>" SelectCommand="AllObjectOverACertainPrice" SelectCommandType="StoredProcedure">
