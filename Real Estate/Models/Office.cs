@@ -13,6 +13,7 @@ namespace Real_Estate.Models
     {
         public int OfficeID { get; set; }
 
+        [StringLength(50)]
         [Required(ErrorMessage = "Office name is required")]
         public string  OfficeName { get; set; }
 
@@ -23,6 +24,7 @@ namespace Real_Estate.Models
         public int? ZipCodeID { get; set; }
         public virtual ZipCode ZipCode { get; set; }
 
+        [StringLength(100)]
         [Required(ErrorMessage = "Address is required")]
         public string Address { get; set; }
     }

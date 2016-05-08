@@ -13,6 +13,7 @@ namespace Real_Estate.Models
 
         public int CityID { get; set; }
 
+        [StringLength(50)]
         [Required(ErrorMessage = "City is required")]
         public string CityName { get; set; }
 

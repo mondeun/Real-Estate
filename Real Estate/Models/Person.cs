@@ -22,9 +22,11 @@ namespace Real_Estate.Models
         public virtual City City { get; set; }
 
         // Other attributes
+        [StringLength(50)]
         [Required(ErrorMessage = "First name is required")]
         public string FirstName { get; set; }
 
+        [StringLength(50)]
         [Required(ErrorMessage = "Last name is required")]
         public string LastName { get; set; }
 
@@ -32,6 +34,7 @@ namespace Real_Estate.Models
         [StringLength(10, ErrorMessage = "Enter personal number as YYMMDDXXXX", MinimumLength = 10)]
         public string Pnr { get; set; }
 
+        [StringLength(100)]
         [Required(ErrorMessage = "Address is required")]
         public string Address { get; set; }
 
