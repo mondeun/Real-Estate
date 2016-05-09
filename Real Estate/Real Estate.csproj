@@ -196,6 +196,7 @@
     <Content Include="Images\kontrakt.png" />
     <Content Include="Images\Krista.jpg" />
     <Content Include="Images\MindMap.png" />
+    <Content Include="Images\redthink.png" />
     <Content Include="Images\Robino.jpg" />
     <Content Include="Images\thinkingB.jpg" />
     <Content Include="Scripts\bootstrap.js" />

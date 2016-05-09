@@ -25,16 +25,20 @@ textarea {
 
 /* Presentation fix */
 
+/* id */
 #myH2 {
     padding-bottom: 40px;
     
 }
 
+#myH4 {
+   color: cadetblue; 
+   font-weight: bold;
+}
+
+/* class */
 .carousel-inner {
     width:50%;
     margin:auto;
 }
 
-.myCarousel {
-       
-}
